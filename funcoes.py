@@ -25,3 +25,12 @@ def faz_jogada(tabuleiro, linha, coluna):
     else:
         tabuleiro[linha][coluna] = '-'
     return tabuleiro
+
+def posiciona_frota(frota):
+    grid = [[0] * 10 for i in range(10)]
+    
+    for lista in frota.values():
+        for sublista in lista:
+            for i, j in sublista:
+                grid[i][j] = 1
+    return grid
