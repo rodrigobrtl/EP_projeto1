@@ -34,3 +34,17 @@ def posiciona_frota(frota):
             for i, j in sublista:
                 grid[i][j] = 1
     return grid
+
+def afundados(frota, tabuleiro):
+    afundado = 0
+    for lista_navios in frota.values():
+        for navio in lista_navios:
+            navio_afundado =  True
+            for i, j in navio:
+                if tabuleiro[i][j] != 'X':
+                    navio_afundado =  False
+                    break
+            if navio_afundado == True:
+                afundado += 1
+    return afundado
+   
